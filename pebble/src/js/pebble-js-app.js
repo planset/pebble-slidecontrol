@@ -27,7 +27,7 @@ Pebble.addEventListener("showConfiguration", function() {
   console.log("showing configuration");
   var options = {host: localStorage.getItem('host')};
   var encodedOptions = encodeURIComponent(JSON.stringify(options));
-  Pebble.openURL('https://raw.githubusercontent.com/planset/slidecontrol/master/pebble/config.html#' + encodedOptions);
+  Pebble.openURL('http://dkpyn.com/sandbox/pebble/config.html#' + encodedOptions);
 });
 
 Pebble.addEventListener("webviewclosed", function(e) {
