@@ -1,4 +1,5 @@
 var ws;
+var configUrl = 'http://dkpyn.com/sandbox/pebble/config.html';
 
 Pebble.addEventListener("ready",
     function(e) {
@@ -27,7 +28,7 @@ Pebble.addEventListener("showConfiguration", function() {
   console.log("showing configuration");
   var options = {host: localStorage.getItem('host')};
   var encodedOptions = encodeURIComponent(JSON.stringify(options));
-  Pebble.openURL('http://dkpyn.com/sandbox/pebble/config.html#' + encodedOptions);
+  Pebble.openURL(configUrl + '#' + encodedOptions);
 });
 
 Pebble.addEventListener("webviewclosed", function(e) {

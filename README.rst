@@ -1,7 +1,7 @@
 ======
 README
 ======
+pebbleからkeynoteのページを進めたり戻したりする。
 
-pebbleからkeynoteのページを進めたり戻ったりする。
-
+pebble/config.htmlをどこかアクセスできるところにおいて、pebble/src/js/pebble-js-app.jsのconfigUrlを変更して下さい。
 
