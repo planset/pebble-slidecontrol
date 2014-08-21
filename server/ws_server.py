@@ -34,7 +34,7 @@ class ControlSlideSocket(tornado.websocket.WebSocketHandler):
 def main():
     parse_command_line()
     app = tornado.web.Application([
-        (r"/", ControlSlideSocket)
+        (r"/ws", ControlSlideSocket)
         ])
     app.listen(options.port)
     tornado.ioloop.IOLoop.instance().start()
