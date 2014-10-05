@@ -4,7 +4,7 @@
   "longName": "slidecontrol",
   "companyName": "dkpyn.com",
   "versionCode": 1,
-  "versionLabel": "1.0.0",
+  "versionLabel": "1.1",
   "capabilities": ["configurable"],
   "watchapp": {
     "watchface": false
@@ -13,6 +13,17 @@
     "control": 0
   },
   "resources": {
-    "media": []
+    "media": [
+        {
+          "type": "png",
+          "name": "IMAGE_ACTION_ICON_PREVIOUS",
+          "file": "images/previous.png"
+        },
+        {
+          "type": "png",
+          "name": "IMAGE_ACTION_ICON_NEXT",
+          "file": "images/next.png"
+        }
+    ]
   }
 }

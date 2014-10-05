@@ -2,6 +2,10 @@
 
 static Window *window;
 static TextLayer *text_layer;
+static ActionBarLayer *action_bar;
+
+static GBitmap *action_icon_previous;
+static GBitmap *action_icon_next;
 
 static void send_cmd(int control) {
   Tuplet value = TupletInteger(0, control);
@@ -55,6 +59,15 @@ static void window_load(Window *window) {
   layer_add_child(window_layer, text_layer_get_layer(text_layer));
 
   accel_tap_service_subscribe(accel_tap_handler);
+
+  // action bar
+  action_bar = action_bar_layer_create();
+  action_bar_layer_add_to_window(action_bar, window);
+  action_bar_layer_set_click_config_provider(action_bar,
+                                             click_config_provider);
+  action_bar_layer_set_icon(action_bar, BUTTON_ID_UP, action_icon_previous);
+  action_bar_layer_set_icon(action_bar, BUTTON_ID_DOWN, action_icon_next);
+
 }
 
 static void window_unload(Window *window) {
@@ -62,9 +75,14 @@ static void window_unload(Window *window) {
 }
 
 static void init(void) {
+  action_icon_previous = gbitmap_create_with_resource(
+          RESOURCE_ID_IMAGE_ACTION_ICON_PREVIOUS);
+  action_icon_next = gbitmap_create_with_resource(
+          RESOURCE_ID_IMAGE_ACTION_ICON_NEXT);
+
   window = window_create();
   app_message_open(64, 64);
-  window_set_click_config_provider(window, click_config_provider);
+  //window_set_click_config_provider(window, click_config_provider);
   window_set_window_handlers(window, (WindowHandlers) {
     .load = window_load,
     .unload = window_unload,
