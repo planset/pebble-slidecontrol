@@ -67,11 +67,11 @@ static void window_load(Window *window) {
                                              click_config_provider);
   action_bar_layer_set_icon(action_bar, BUTTON_ID_UP, action_icon_previous);
   action_bar_layer_set_icon(action_bar, BUTTON_ID_DOWN, action_icon_next);
-
 }
 
 static void window_unload(Window *window) {
   text_layer_destroy(text_layer);
+  action_bar_layer_destroy(action_bar);
 }
 
 static void init(void) {
@@ -80,13 +80,14 @@ static void init(void) {
   action_icon_next = gbitmap_create_with_resource(
           RESOURCE_ID_IMAGE_ACTION_ICON_NEXT);
 
-  window = window_create();
   app_message_open(64, 64);
-  //window_set_click_config_provider(window, click_config_provider);
+
+  window = window_create();
   window_set_window_handlers(window, (WindowHandlers) {
     .load = window_load,
     .unload = window_unload,
   });
+
   const bool animated = true;
   window_stack_push(window, animated);
 }
