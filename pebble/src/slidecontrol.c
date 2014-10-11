@@ -76,7 +76,7 @@ static void window_unload(Window *window) {
 
 static void init(void) {
   action_icon_previous = gbitmap_create_with_resource(
-          RESOURCE_ID_IMAGE_ACTION_ICON_PREVIOUS);
+          RESOURCE_ID_IMAGE_ACTION_ICON_BACK);
   action_icon_next = gbitmap_create_with_resource(
           RESOURCE_ID_IMAGE_ACTION_ICON_NEXT);
 

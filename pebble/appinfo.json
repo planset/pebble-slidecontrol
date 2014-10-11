@@ -16,8 +16,8 @@
     "media": [
         {
           "type": "png",
-          "name": "IMAGE_ACTION_ICON_PREVIOUS",
-          "file": "images/previous.png"
+          "name": "IMAGE_ACTION_ICON_BACK",
+          "file": "images/back.png"
         },
         {
           "type": "png",
